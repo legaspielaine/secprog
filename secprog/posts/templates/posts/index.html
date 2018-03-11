@@ -1,13 +1,436 @@
-<html>
-<head>
-    <title>Welcome to our shop!</title>
-</head>
-<body>
-    <ul>
-        {% for item in items %}
-        <li><a href="{% url 'posts:details' item.id %}">{{item.name}}</a></li>
-        {% endfor %}
-    </ul>
 
-</body>
+<html>
+    <head><title>NB Watch</title>
+        
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+    </head>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+        <script>
+        $(document).on("keypress", ".search", function(e) {
+            if (e.which == 13) {
+            
+            }
+        });
+    
+</script>
+    
+    <style>
+        body {
+    font-family: Helvetica;
+    overflow-x: hidden;
+    margin: 0; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+}
+
+.container
+{    
+            margin: 15em;
+            margin-top: 1em;
+            display: flex;
+            flex-direction: row;
+            flex-wrap:wrap;
+            width:70%;
+            height:50%;
+}
+
+/*header styling*/
+        a:link {
+            text-decoration: none;
+        }
+        
+        a:hover {
+            cursor: pointer;
+        }
+        
+        .left-container {
+            width: 35%;
+            display: flex;
+            align-items: center;
+        }
+        
+        .middle-container {
+            width: 35%;
+        }
+        
+        .right-container {
+            width: 30%;
+            display: flex;
+            flex-direction: row;
+            align-content:flex-end;
+        }
+        
+        .rcc {
+            position: relative;
+            bottom: 3.2em;
+            right: 0.8em;
+        }
+        
+        .bar-item, .home, .ppost {
+            font-family: "Open Sans";
+            font-size: 15px;
+            font-style:normal;
+            font-variant:normal;
+            font-weight:500;
+            line-height: 26.4px;
+            color: darkgray;
+        }
+        
+        .bar-container {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .bar {
+            height: 1.5em;
+            display: flex;
+            flex-direction: row;
+            justify-content:flex-end;
+            width: 95%;
+            border-bottom-style: ridge;
+            border-bottom-color: #d3d3d3;
+            border-bottom-width: thin;
+        }
+        
+        .item-container {
+            width: 20%;
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .a-container {
+           
+            display: flex;
+            flex-direction: row;
+            width: 95%;
+            height: 5em;
+        }
+        
+        .b-container {
+            
+            width: 25%;
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .menu {
+          
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            width: 95%;
+            height: 2em;
+            border-bottom-style: ridge;
+            border-bottom-color: #d3d3d3;
+            border-bottom-width: thin;
+            border-top-style: ridge;
+            border-top-color: #d3d3d3;
+            border-top-width: thin;
+            
+        }
+        
+        .home, .ppost {
+            
+            vertical-align: baseline;
+            line-height: 2.1em;
+            border-right-style: ridge;
+            border-right-color: #d3d3d3;
+            border-right-width: thin;
+            
+        }
+        
+        .t {
+            margin-right: 1.8em;
+        }
+        
+        .s {
+            margin-right: 3.7em;
+        }
+        
+        .s:hover, .t:hover, #u:hover {
+            color: dodgerblue;
+        }
+        
+        .search {
+            width: 65%;
+            height: 55%;
+            padding: 12px 20px 12px 40px;
+            margin-top: 1.4em;
+            margin-left: 11.3em;
+            display: inline-flex;
+            box-sizing: border-box;
+            background-image: url('magnifyglass.png');
+            background-position: 10px 8px; 
+            background-size: 25px;
+            background-repeat: no-repeat;
+            border-style:inset;
+            
+        }
+
+
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    text-decoration-color: darkgrey;
+    cursor: pointer;
+    
+    
+}
+
+
+.header {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    top:0px;
+    right: 0px;
+    height: 50px;
+    width:100%;
+    background-color:white;
+    box-shadow: 1px 9px 5px -8px rgba(0,0,0,1);
+ 
+    justify-content: space-around;
+}
+
+.account
+{
+    display: flex;
+    margin-right: -13em;
+    padding:1em;
+    flex-direction: row;
+    justify-content: space-between;
+
+   
+}
+
+h1 {
+    font-size: 25px;
+    color: dimgrey;
+    font-family: Helvetica;
+}
+
+h2 {
+    padding-right: 3em;
+    font-size: 15px;
+    color: dimgrey;
+}
+
+#page
+{
+    display: flex;
+    flex-direction: column;
+    background-size: auto;
+    flex-wrap: wrap;
+}
+
+
+
+#more {
+
+    align-self: flex-end;
+    color: #FFFFFF;
+    border-radius: 10px;
+    align-self: center;
+    width: 80%;
+    height: 40px;
+    font-size:25;
+    font-family: fantasy;
+    cursor: pointer;
+    color: white;
+    transition-duration: 0.4s;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    background-color: lightskyblue;
+
+
+
+}
+
+
+
+/*Resize the wrap to see the search bar change!*/
+
+
+#post_container
+{
+	
+	font-family:helvetica;
+    background-color: white;
+    height: 200%;
+    flex-direction: row;
+    border-radius: 5px;
+    flex-wrap: wrap;
+}
+
+.footer {
+    flex-wrap: wrap;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    margin-bottom: 5px;
+    margin-top: 20px;
+    position: relative;
+    flex-basis: auto;
+}
+
+#post_box
+{
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 7em;
+
+}
+
+#thumb {
+   margin: 1.5em;
+    padding: 10px;
+    width: 100px;
+    height: 100px;
+    
+}
+
+.post 
+{
+    
+	margin:2em;
+    height:13%;
+    width: 40%;
+    box-shadow: 2px 8px 18px -3px rgba(0,0,0,0.22);
+    background-color:white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+      
+}
+.post:hover {
+    
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+
+
+.info
+{
+    font-size: 15px;
+    font-family: helvetica;
+    padding-top: 2em;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.info div
+{
+    padding:1mm;
+  
+}
+
+ .itemname {
+            font-size: 1.1em;
+            margin-top: -1em;
+            color: black;
+            font-style: oblique;
+        }
+        
+        .tag {
+            font-weight: lighter;
+        }
+        
+        .uname
+{
+    color:dodgerblue;
+}
+
+    
+    </style>
+   
+    <body>
+        <div id = page>
+           <div class = "bar-container">
+                <div class = "bar">
+                    <div class = "item-container">
+                        <div class = "bar-item">Hi, <a href="{% url 'market:user' user.id %}"><span class="uname">  </span></a> !</div>
+                        <a href="/register/"><div class = "bar-item" id="u">Register</div></a>
+                        <a href="/logout/">
+                            <div class = "bar-item" id="u">Logout</div>
+                            </a>
+                        <a href="/login/">
+                            <div class = "bar-item" id="u">Login</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class = "bar-container">
+                <div class = "a-container">
+                    <div class = "left-container"> </div>
+                    <div class = "middle-container">
+                    </div>
+                    <div class = "right-container">
+     <form action="{% url 'market:searchpic' %}">
+     	<input type="text" class="search" name = "tag" placeholder="Search tag..." style="background-image:url('{%static 'photos/magnifyglass.png' %}')">
+     </form>
+</div>
+
+                </div>
+            </div>
+            <div class = "bar-container">
+                <div class = "menu">
+                    <div class = "b-container">
+                        <a href="/market"><div class = "home"> <span class = "t"> Home </span> </div></a>
+                        <a href="{% url 'market:postanitem' %}"><div class = "ppost"> <span class = "s"> Profile </span> </div></a>
+                        <a href="{% url 'market:postanitem' %}"><div class = "ppost"> <span class = "s"> Cart </span> </div></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div id ="post_container">
+                <div id = post_box>
+                    
+                    <div class = post id = 1 >
+                        <a href = "{% url 'market:itemdetail' post.id %}"><img src= "{{ post.tb_img.url }}" id ="thumb"  alt="no photo loaded yet"></a>
+                        <div class = info>
+                        <div class = itemname>Name</div>
+                        <div class = tag>Analog</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class = "footer">
+                <div class="pagination">
+                    <span class="step-links">
+                        <a href="?page={{ latest_posts.previous_page_number }} &paginate_by={{ paginate_by }}">previous</a>
+
+                        <span class="current">
+                        </span>
+
+                        <a href="?page={{ latest_posts.next_page_number }} &paginate_by={{ paginate_by }}">next</a>
+                    </span>
+                </div>
+                
+
+                    <form action="" method="get">
+                    <select name="paginate_by" class = pager onchange="this.form.submit()" >
+                        <option></option>
+                        <option value = "10">10</option>
+                        <option value = "15">15</option>
+                        <option value = "20">20</option>
+                    </select>  
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
